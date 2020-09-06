@@ -1,0 +1,59 @@
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.cust-form button{
+  width: 100px;
+}
+
+.custFormCntrWpr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.custFormCntr {
+  padding: 20px 10px;
+}
+
+.py-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.py-10 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.pr-10 {
+  padding-right: 10px;
+}
+
+.my-10 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.px-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.br{
+  border: 1px solid #8080802e;
+}
+
+.add-cmp-btn {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}

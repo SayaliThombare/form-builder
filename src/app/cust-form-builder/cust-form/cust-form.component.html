@@ -1,0 +1,34 @@
+<div class="custFormCntrWpr">
+  <div class="custFormCntr">
+    <form [formGroup]="custForm" class="cust-form">
+      <div *ngFor="let formLabel of formLabels">
+    
+        <div *ngIf="formLabel.controlTyp === 'static'" class="py-10">{{formLabel.label}}</div>
+    
+        <div *ngIf="formLabel.controlTyp === 'radio'" class="flex-col py-10 px-10 br">
+          <label>{{formLabel.label}}</label>
+          <mat-radio-group class="py-10" aria-label="Select an option" formControlName = "{{formLabel.control}}">
+            <mat-radio-button class="pr-10" [value]="opt" *ngFor="let opt of formLabel.options">{{opt}}</mat-radio-button>
+          </mat-radio-group>
+          <button class="my-10" mat-stroked-button color="primary" (click)="addData()">Add</button>
+        </div>
+    
+        <div class="mt-10" *ngIf="formLabel.controlTyp === 'text'">
+          <mat-form-field appearance="outline">
+            <input matInput [placeholder]="formLabel.label" formControlName = "{{formLabel.control}}">
+            <mat-error *ngIf="custForm.get(formLabel.control).status === 'INVALID' && !custForm.get(formLabel.control).pristine">{{getErrorMessage(formLabel.control)}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+    <div class="custFormActWpr py-10 my-10">
+      <p>
+        <button class="add-cmp-btn" mat-stroked-button color="primary" (click)="addComponent()">Add Component</button>
+      </p>
+      <p class="center">
+        <button mat-stroked-button color="primary" (click)="downloadJson()">Download Json</button>
+      </p>
+      <a id="downloadAnchorElem" style="display:none"></a>
+    </div>
+  </div>
+</div>
